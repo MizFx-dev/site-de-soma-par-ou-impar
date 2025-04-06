@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tarefa de Soma + Par/Impar</title>
+</head>
+<body>
+    <h1>Faça a soma de Dois Números</h1>
+
+    <label for="numero1">Digite o primeiro número:</label>
+    <input type="number" id="numero1"><br><br>
+
+    <label for="numero2">Digite o segundo número:</label>
+    <input type="number" id="numero2"><br><br>
+
+    <button onclick="calcular()">Calcular</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        function calcular() {
+            // Pega os valores de entrada
+            var num1 = parseInt(document.getElementById("numero1").value);
+            var num2 = parseInt(document.getElementById("numero2").value);
+
+            // Verificar se são realmente números
+            if (isNaN(num1) || isNaN(num2)) {
+                document.getElementById("resultado").innerHTML = "Por favor, digite números válidos.";
+                return;
+            }
+
+            // Somar
+            var soma = num1 + num2;
+
+            // Verifica se é par ou ímpar
+            var tipo = (soma % 2 === 0) ? "par" : "ímpar";
+
+            // Resultado
+            document.getElementById("resultado").innerHTML = "A soma de " + num1 + " e " + num2 + " é: <strong>" + soma + "</strong> e este número é <strong>" + tipo + "</strong>.";
+        }
+    </script>
+</body>
+</html>
